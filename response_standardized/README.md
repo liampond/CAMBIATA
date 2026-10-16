@@ -35,7 +35,7 @@ results against one another. It also checks the balanced design and prints the
 saved per-model totals and means. It does not rerun the counterpoint checker or
 verify musical-duplicate classifications.
 
-See the [analysis provenance](<../Résultat d'analyse/README.md>) for the evaluator
+See the [analysis provenance](<../Résultat d'analyse/README.md>) for the evaluator
 repository, report formats, and limits of the historical record. These are
 retained evaluation scores; they are not an archive of every API attempt or a
 guarantee of unmodified, pre-repair model responses. New generation output belongs

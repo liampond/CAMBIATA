@@ -79,7 +79,7 @@ See `docs/LLM-AGENT-GUIDE.md` for detailed usage instructions.
 The retained 450-score evaluation corpus is versioned in
 [`response_standardized/`](response_standardized/README.md), with a manifest of
 file hashes and links to the saved checker results. The
-[analysis provenance](<Résultat d'analyse/README.md>) documents the exports and
+[analysis provenance](<Résultat d'analyse/README.md>) documents the exports and
 the separate [counterpoint-spellcheck](https://github.com/liampond/counterpoint-spellcheck)
 evaluator. Verify the snapshot without API calls or external dependencies:
 

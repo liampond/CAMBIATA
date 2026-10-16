@@ -20,7 +20,13 @@ wheels/
 .installed.cfg
 *.egg
 *.docx
-paper/
+
+# Keep historical drafts local; version the current manuscript and appendices.
+/paper/*
+!/paper/journal/
+/paper/journal/*
+!/paper/journal/Paper on Fux v4 MTO.docx
+!/paper/journal/Publication_Appendices_Complete CAMBIATA v1.0.docx
 
 # Virtual environments
 venv/
@@ -43,6 +49,7 @@ env/
 .pytest_cache/
 .coverage
 htmlcov/
+.test_batch_outputs/
 
 # Poetry
 poetry.lock
@@ -50,6 +57,11 @@ poetry.lock
 # Outputs - ignore all generated files but keep directory structure
 outputs/
 !outputs/.gitkeep
+
+# Redundant exports: identical copies are already retained locally in paper/.
+/docs/CAMBIATA - Appendix 7 - Automated Evaluation Output.pdf
+/docs/Paper on Fux Final Version HoT2.pdf
+/docs/Paper_Appendices_Complete CAMBIATA Final Version HoT2.pdf
 
 # OS
 .DS_Store
