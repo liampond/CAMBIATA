@@ -146,25 +146,24 @@ class TestPathUtils:
     def test_get_output_path(self, temp_structure):
         """Test generating output file paths with context."""
         outputs_dir = temp_structure / "outputs"
-        
-        # When context=True but no guide specified, still goes to no-context
+
         output_path = get_output_path(
             outputs_dir=outputs_dir,
             model_name="TestModel",
             file_id="Q1a",
             datatype="musicxml",
             context=True,
-            guide="/path/to/Pierre-Guide.md"
+            guide="data/guides/1_first_species/Fux Rules- 1vs1 note - v1.7.txt"
         )
-        
-        # New structure: outputs/<output_type>/<model>/<context-folder>/temp-<X.X>/<datatype>/<file_id>_<context_label>_<run>.<ext>
-        expected = outputs_dir / "response" / "TestModel" / "context-Pierre" / "temp-0.0" / "musicxml" / "Q1a_Pierre_1.txt"
+
+        # Structure: outputs/<output_type>/<model>/<species>/<version>/<file_id>/run_<N>.<ext>
+        expected = outputs_dir / "response" / "TestModel" / "1st-species" / "v1.7" / "Q1a" / "run_1.txt"
         assert output_path == expected
 
     def test_get_output_path_no_context(self, temp_structure):
         """Test generating output file paths without context."""
         outputs_dir = temp_structure / "outputs"
-        
+
         output_path = get_output_path(
             outputs_dir=outputs_dir,
             model_name="TestModel",
@@ -172,9 +171,9 @@ class TestPathUtils:
             datatype="musicxml",
             context=False
         )
-        
-        # New structure: outputs/<output_type>/<model>/<context-folder>/temp-<X.X>/<datatype>/<file_id>_<context_label>_<run>.<ext>
-        expected = outputs_dir / "response" / "TestModel" / "no-context" / "temp-0.0" / "musicxml" / "Q2b_no-context_1.txt"
+
+        # Structure: outputs/<output_type>/<model>/no-context/<file_id>/run_<N>.<ext>
+        expected = outputs_dir / "response" / "TestModel" / "no-context" / "Q2b" / "run_1.txt"
         assert output_path == expected
 
     def test_find_project_root(self):

@@ -11,3 +11,4 @@ OUTPUT RULES:
 - The very first character of your response must be <?xml.
 - The very last character must be </score-partwise>.
 - The file must be directly renderable by MuseScore without any manual editing.
+- CRITICAL: Any reasoning or planning you do must be entirely internal (silent). Do not output it. If your response contains anything before <?xml, it will be treated as a parse failure.

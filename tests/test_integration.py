@@ -24,6 +24,15 @@ class MockLLMForIntegration(LLMInterface):
         })
         return self.response
 
+    def submit_batch(self, inputs):
+        raise NotImplementedError
+
+    def poll_batch(self, batch_id):
+        raise NotImplementedError
+
+    def retrieve_batch_results(self, batch_id):
+        raise NotImplementedError
+
 
 class TestCLIIntegration:
     @pytest.fixture
@@ -69,6 +78,12 @@ class TestCLIIntegration:
             class Dummy(LLMInterface):
                 def query(self, input: PromptInput) -> str:
                     return "x"
+                def submit_batch(self, inputs):
+                    raise NotImplementedError
+                def poll_batch(self, batch_id):
+                    raise NotImplementedError
+                def retrieve_batch_results(self, batch_id):
+                    raise NotImplementedError
             dummy = Dummy()
             with pytest.raises(FileNotFoundError):
                 PromptRunner(

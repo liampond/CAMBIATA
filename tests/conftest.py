@@ -62,6 +62,15 @@ def mock_llm() -> LLMInterface:
             self.captured_queries.append(input)
             return self.response
 
+        def submit_batch(self, inputs):
+            raise NotImplementedError
+
+        def poll_batch(self, batch_id):
+            raise NotImplementedError
+
+        def retrieve_batch_results(self, batch_id):
+            raise NotImplementedError
+
     return MockLLM()
 
 

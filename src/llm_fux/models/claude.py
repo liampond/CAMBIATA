@@ -1,8 +1,11 @@
 import logging
 import os
-from typing import Optional
+import time
+from typing import Optional, Dict, Iterator
 from anthropic import Anthropic
-from llm_fux.models.base import LLMInterface, LLMResponse, PromptInput, TokenUsage
+from anthropic.types.message_create_params import MessageCreateParamsNonStreaming
+from anthropic.types.messages.batch_create_params import Request
+from llm_fux.models.base import LLMInterface, LLMResponse, PromptInput, TokenUsage, BatchResult
 from llm_fux.config.config import DEFAULT_MODELS, get_timeout, get_max_tokens
 from llm_fux.utils.text_utils import clean_code_blocks
 
@@ -43,6 +46,11 @@ class ClaudeModel(LLMInterface):
         # Get max_tokens from input, or fall back to config default
         max_tokens = input.max_tokens if hasattr(input, "max_tokens") and input.max_tokens else get_max_tokens()
 
+        logger.info(
+            "Claude API call — model: %s, max_tokens: %s, temperature: %s",
+            model, max_tokens, input.temperature,
+        )
+
         response = self.client.messages.create(
             model=model,
             max_tokens=max_tokens,
@@ -74,3 +82,53 @@ class ClaudeModel(LLMInterface):
             )
 
         return LLMResponse(text=cleaned, usage=usage, model_id=model)
+
+    def submit_batch(self, inputs: Dict[str, PromptInput]) -> str:
+        requests = []
+        for custom_id, prompt_input in inputs.items():
+            model = prompt_input.model_name or self.model_name
+            max_tokens = prompt_input.max_tokens if getattr(prompt_input, "max_tokens", None) else get_max_tokens()
+
+            req = Request(
+                custom_id=str(custom_id),
+                params=MessageCreateParamsNonStreaming(
+                    model=model,
+                    max_tokens=max_tokens,
+                    temperature=prompt_input.temperature,
+                    system=prompt_input.system_prompt,
+                    messages=[{"role": "user", "content": prompt_input.user_prompt}]
+                )
+            )
+            requests.append(req)
+
+        batch = self.client.messages.batches.create(requests=requests)
+        logger.info(f"Submitted batch job: {batch.id}")
+        return batch.id
+
+    def poll_batch(self, batch_id: str) -> str:
+        batch = self.client.messages.batches.retrieve(batch_id)
+        if batch.processing_status == "ended":
+            return "completed"
+        elif batch.processing_status == "canceling" or batch.processing_status == "canceled":
+            return "failed"
+        return "in_progress"
+
+    def retrieve_batch_results(self, batch_id: str) -> Iterator[BatchResult]:
+        for result in self.client.messages.batches.results(batch_id):
+            if result.result.type == "succeeded":
+                text = result.result.message.content[0].text.strip()
+                cleaned_text = clean_code_blocks(text)
+
+                usage = TokenUsage(
+                    prompt_tokens=result.result.message.usage.input_tokens,
+                    completion_tokens=result.result.message.usage.output_tokens,
+                    total_tokens=result.result.message.usage.input_tokens + result.result.message.usage.output_tokens
+                )
+
+                response = LLMResponse(text=cleaned_text, usage=usage, model_id=self.model_name)
+                yield BatchResult(custom_id=result.custom_id, response=response)
+            else:
+                yield BatchResult(custom_id=result.custom_id, error=str(result.result))
+
+    def supports_batch_api(self) -> bool:
+        return True

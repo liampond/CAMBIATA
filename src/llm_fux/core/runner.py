@@ -144,10 +144,12 @@ class PromptRunner:
             response = result.text
             self._token_usage = result.usage
             self._response_model_id = result.model_id
+            self._extra_params = result.extra_params
         else:
             response = result
             self._token_usage = None
             self._response_model_id = None
+            self._extra_params = {}
 
         # Log token usage if available
         if self._token_usage:
@@ -371,6 +373,14 @@ class PromptRunner:
         # Post-process MusicXML to fix LLM duration/divisions mismatches.
         if self.datatype == "musicxml":
             response = fix_musicxml_durations(response)
+
+        # If an identical response already exists, avoid creating duplicate run files.
+        existing = self._find_duplicate_response(response)
+        if existing:
+            self.logger.info("Skipping duplicate response save; identical to %s", existing)
+            self.actual_response_path = existing
+            return
+
         # Response is already in the correct location from get_output_path with output_type="response"
         self.save_to.parent.mkdir(parents=True, exist_ok=True)
         self.save_to.write_text(response, encoding="utf-8")
@@ -378,16 +388,48 @@ class PromptRunner:
         # Store the actual path for later reference
         self.actual_response_path = self.save_to
 
+    def _find_duplicate_response(self, normalized_response: str) -> Optional[Path]:
+        """Return an existing response path if content is identical, else None."""
+        if not self.save_to:
+            return None
+
+        response_dir = self.save_to.parent
+        suffix = self.save_to.suffix
+        for existing in sorted(response_dir.glob(f"run_*{suffix}")):
+            if existing == self.save_to or not existing.is_file():
+                continue
+            try:
+                if existing.read_text(encoding="utf-8") == normalized_response:
+                    return existing
+            except OSError:
+                # Ignore unreadable files and continue scanning.
+                continue
+        return None
+
     def _persist_artifacts(self, response: str, prompt_input: PromptInput) -> None:
-        """Persist response & metadata file (best effort)."""
+        """Persist response, metadata, and readable prompt file (best effort)."""
         try:
             self._save_response(response)
         except Exception as e:  # pragma: no cover
             self.logger.warning("Failed to save response: %s", e)
+
+        # If response save was deduplicated to an existing run, do not create
+        # new metadata/prompt run files that only duplicate prior artifacts.
+        if self.save_to and getattr(self, "actual_response_path", self.save_to) != self.save_to:
+            self.logger.info(
+                "Skipping metadata/prompt save for deduplicated response (%s)",
+                self.actual_response_path,
+            )
+            return
+
         try:
             self._save_metadata(prompt_input)
         except Exception as e:  # pragma: no cover
             self.logger.warning("Failed to write metadata file: %s", e)
+        try:
+            self._save_readable_prompt(prompt_input)
+        except Exception as e:  # pragma: no cover
+            self.logger.warning("Failed to write prompt file: %s", e)
 
     # ------------------------------------------------------------------
     def _save_metadata(self, prompt_input: PromptInput) -> None:
@@ -424,6 +466,7 @@ class PromptRunner:
         api_duration = getattr(self, "_api_duration", None)
         token_usage = getattr(self, "_token_usage", None)
         response_model_id = getattr(self, "_response_model_id", None)
+        extra_params = getattr(self, "_extra_params", {})
         actual_path = getattr(self, "actual_response_path", self.save_to)
 
         bundle: Dict[str, Any] = {
@@ -440,6 +483,9 @@ class PromptRunner:
             "response_path": str(actual_path),
         }
 
+        if extra_params:
+            bundle["extra_params"] = extra_params
+
         if api_duration is not None:
             bundle["api_duration_seconds"] = round(api_duration, 2)
 
@@ -447,26 +493,47 @@ class PromptRunner:
         if token_usage:
             bundle["token_usage"] = token_usage.to_dict()
 
-        # Prompt texts
-        bundle["system_prompt"] = prompt_input.system_prompt
-        bundle["user_prompt_compiled"] = prompt_input.user_prompt
-
-        # Individual components
+        # Component char lengths for quick reference (full text is in the prompt file)
         if components:
-            comp_section: Dict[str, Any] = {}
-            for key, value in components.items():
-                if key == "guides":
-                    comp_section["guides"] = value if isinstance(value, list) else [value] if value else []
-                else:
-                    comp_section[key] = value
-            # Include component char lengths for quick reference
-            comp_section["_lengths"] = {
+            bundle["component_lengths"] = {
                 k: len(v) if isinstance(v, str) else sum(len(x) for x in v if x)
                 for k, v in components.items()
             }
-            bundle["components"] = comp_section
 
         bundle_json = json.dumps(bundle, ensure_ascii=False, indent=2)
         metadata_path.write_text(bundle_json, encoding="utf-8")
         self.logger.info("Saved metadata to %s", metadata_path)
         self.metadata_path = metadata_path
+
+    def _save_readable_prompt(self, prompt_input: PromptInput) -> None:
+        """Save the complete prompt as a readable text file, faithful to what the LLM sees."""
+        if not self.save_to:
+            return
+        from llm_fux.utils.path_utils import get_output_path
+        prompt_path = get_output_path(
+            outputs_dir=self.base_dirs.get("outputs", Path("outputs")),
+            model_name=self._get_clean_model_name(self.model),
+            file_id=self.file_id,
+            datatype=self.datatype,
+            context=self.context,
+            guide=self.guide,
+            dataset=self.dataset,
+            ext=".txt",
+            output_type="prompt",
+            temperature=self.temperature,
+        )
+
+        lines = [
+            "=" * 80,
+            "SYSTEM PROMPT",
+            "=" * 80,
+            prompt_input.system_prompt,
+            "",
+            "=" * 80,
+            "USER PROMPT",
+            "=" * 80,
+            prompt_input.user_prompt,
+        ]
+
+        prompt_path.write_text("\n".join(lines), encoding="utf-8")
+        self.logger.info("Saved readable prompt to %s", prompt_path)

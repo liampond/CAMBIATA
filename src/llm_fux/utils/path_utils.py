@@ -184,33 +184,51 @@ def ensure_dir(path: Path) -> None:
     path.mkdir(parents=True, exist_ok=True)
 
 
-def _get_next_run_number(base_path: Path) -> int:
-    """Find the next available run number for a given base path."""
-    if not base_path.parent.exists():
+import re
+
+
+_SPECIES_FOLDER_MAP = {
+    "1_first_species": "1st-species",
+    "2_second_species": "2nd-species",
+    "3_third_species": "3rd-species",
+    "4_fourth_species": "4th-species",
+    "5_fifth_species": "5th-species",
+}
+
+
+def _extract_species_and_version(guide: str) -> tuple[str, str]:
+    """Extract species and version from a guide path.
+
+    Supports both ``v2.3`` and ``version 2.0`` naming conventions.
+
+    Examples::
+
+        "data/guides/5_fifth_species/Fux Rules- 5th species - Florish - v2.3.txt"
+            → ("5th-species", "v2.3")
+        "data/guides/1_first_species/1vs1_v1.2.txt"
+            → ("1st-species", "v1.2")
+        "data/guides/2_second_species/Cantus 2notes vs 1 - Schubert version 2.0.txt"
+            → ("2nd-species", "v2.0")
+    """
+    guide_path = Path(guide)
+    parent = guide_path.parent.name
+    species = _SPECIES_FOLDER_MAP.get(parent, parent)
+    version_match = re.search(r'(?:version\s+|v)(\d+\.\d+)', guide_path.stem, re.IGNORECASE)
+    version = f"v{version_match.group(1)}" if version_match else "unknown"
+    return species, version
+
+
+def _get_next_run_number(folder: Path, ext: str) -> int:
+    """Find the next available run number in *folder* for files named ``run_N<ext>``."""
+    if not folder.exists():
         return 1
-    
-    # Extract the base filename pattern (everything before the extension)
-    base_name = base_path.stem
-    extension = base_path.suffix
-    
-    # Look for existing files with pattern: base_name_N.extension
-    existing_numbers = []
-    for existing_file in base_path.parent.iterdir():
-        if existing_file.is_file() and existing_file.suffix == extension:
-            # Check if it matches our pattern
-            name = existing_file.stem
-            if name == base_name:
-                # This is the base file (no number), treat as run 1
-                existing_numbers.append(1)
-            elif name.startswith(base_name + "_") and name[len(base_name + "_"):].isdigit():
-                # This has a number suffix
-                number = int(name[len(base_name + "_"):])
-                existing_numbers.append(number)
-    
-    if not existing_numbers:
-        return 1
-    
-    return max(existing_numbers) + 1
+    existing: list[int] = []
+    for f in folder.iterdir():
+        if f.is_file() and f.suffix == ext:
+            m = re.match(r'run_(\d+)', f.stem)
+            if m:
+                existing.append(int(m.group(1)))
+    return max(existing) + 1 if existing else 1
 
 
 def get_output_path(
@@ -222,83 +240,35 @@ def get_output_path(
     guide: Optional[str] = None,
     dataset: Optional[str] = None,
     ext: str = ".txt",
-    output_type: str = "response",  # 'response' or 'metadata'
+    output_type: str = "response",
     temperature: float = 0.0,
 ) -> Path:
-    """Return path for model output file with deeply nested folder-based organization.
+    """Return path for model output file.
 
-    Structure: ``outputs/<output_type>/<model>/<context-folder>/temp-<X.X>/<datatype>/<file_id>_<context>_<run><ext>``
-    
+    Structure (with context)::
+
+        outputs/<output_type>/<model>/<species>/<guide_version>/<file_id>/run_<N>.<ext>
+
+    Structure (no context)::
+
+        outputs/<output_type>/<model>/no-context/<file_id>/run_<N>.<ext>
+
     Output types:
         - response: The raw LLM-generated file (e.g. MusicXML)
-        - metadata: Combined prompt text + run parameters + token usage (replaces
-          the former separate ``prompt`` and ``input`` output types)
-    
-    Context folder naming:
-        - no-context: When context=False or no guide specified
-        - context-<guide>: When context=True with specific guide (e.g., context-LLM, context-Pierre)
-    
-    Args:
-        outputs_dir: Root outputs directory
-        model_name: Name of the model (ChatGPT, Claude, Gemini)
-        file_id: File identifier (e.g., Above_C)
-        datatype: Format (musicxml)
-        context: Whether guide/context was used
-        guide: Specific guide path (required when context=True)
-        dataset: Dataset name (unused in new structure)
-        ext: File extension
-        output_type: Type of output file ('response' or 'metadata')
-        temperature: Model temperature setting (0.0-1.0)
-    
-    Returns:
-        Path object for the output file
+        - metadata: Run parameters + token usage (JSON)
+        - prompt: Readable compiled prompt as sent to the LLM (TXT)
     """
     if not file_id:
         raise ValueError("file_id is required for output path")
-    
-    # Structure: outputs/<output_type>/<model>/<context-folder>/temp-<X.X>/<datatype>/
-    
-    # Start with output type (response/prompt/input)
-    type_folder = outputs_dir / output_type
-    
-    # Then model
-    model_folder = type_folder / model_name
-    
-    # Then context folder and determine context label for filename
+
+    type_folder = outputs_dir / output_type / model_name
+
     if context and guide:
-        # Specific guide used - extract guide name from filename
-        # e.g., "data/guides/Pierre-Guide.md" -> "Pierre"
-        # e.g., "data/guides/LLM-Guide.md" -> "LLM"
-        # e.g., "data/guides/four-versus-one/4vs1_v1.0.txt" -> "4vs1_v1.0"
-        guide_path = Path(guide)
-        guide_name = guide_path.stem  # "Pierre-Guide.md" -> "Pierre-Guide", "4vs1_v1.0.txt" -> "4vs1_v1.0"
-        # If it ends with "-Guide", take just the prefix
-        if guide_name.endswith("-Guide"):
-            guide_name = guide_name[:-6]  # "Pierre-Guide" -> "Pierre"
-        context_folder = model_folder / f"context-{guide_name}"
-        context_label = guide_name
+        species, version = _extract_species_and_version(guide)
+        file_folder = type_folder / species / version / file_id
     else:
-        # No context or no guide specified
-        context_folder = model_folder / "no-context"
-        context_label = "no-context"
-    
-    # Then temperature folder
-    temp_folder = context_folder / f"temp-{temperature:.1f}"
-    
-    # Then datatype (format)
-    format_folder = temp_folder / datatype
-    
-    # Create the directory structure
-    ensure_dir(format_folder)
-    
-    # Create the base filename pattern for run number detection
-    # Pattern: <file_id>_<context_label>_<run>.<ext>
-    base_filename = f"{file_id}_{context_label}"
-    base_path = format_folder / f"{base_filename}{ext}"
-    
-    # Get the next run number
-    run_number = _get_next_run_number(base_path)
-    
-    # Create the final filename with context label and run number
-    final_filename = f"{file_id}_{context_label}_{run_number}{ext}"
-    return format_folder / final_filename
+        file_folder = type_folder / "no-context" / file_id
+
+    ensure_dir(file_folder)
+    run_number = _get_next_run_number(file_folder, ext)
+    return file_folder / f"run_{run_number}{ext}"

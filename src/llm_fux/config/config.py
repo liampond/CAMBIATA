@@ -16,11 +16,11 @@ import yaml
 load_dotenv()
 
 # Default models by provider
-# DO NOT CHANGE UNDER ANY CIRCUMSTANCES
+# LOCKED — Update only with explicit approval for new experiment rounds.
 DEFAULT_MODELS = {
-    "openai": "gpt-5.2-2025-12-11",
-    "anthropic": "claude-3-5-sonnet-20241022",
-    "google": "gemini-2.0-flash-001",
+    "openai": "gpt-5.4",
+    "anthropic": "claude-opus-4-6",
+    "google": "gemini-3.1-pro-preview",
 }
 
 # API keys from environment
@@ -53,7 +53,7 @@ def get_timeout() -> Optional[float]:
 
 def get_max_tokens() -> int:
     """Get max_tokens from config."""
-    return get_config().get('max_tokens', 16000)
+    return get_config().get('max_tokens', 200000)
 
 
 # Per-model temperature defaults.

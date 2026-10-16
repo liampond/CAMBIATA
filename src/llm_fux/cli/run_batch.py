@@ -37,10 +37,10 @@ from llm_fux.utils.path_utils import (
 def list_questions(_path):  # type: ignore
     return ["Q1b"]
 
-MODEL_ENV_VARS: Dict[str, str] = {
-    "chatgpt": "OPENAI_API_KEY",
-    "claude": "ANTHROPIC_API_KEY",
-    "gemini": "GOOGLE_API_KEY",
+MODEL_ENV_VARS: Dict[str, List[str]] = {
+    "chatgpt": ["OPENAI_API_KEY"],
+    "claude": ["ANTHROPIC_API_KEY"],
+    "gemini": ["GOOGLE_API_KEY", "GOOGLE_GENAI_API_KEY", "GEMINI_API_KEY"],
 }
 
 
@@ -72,15 +72,21 @@ def parse_csv_or_list(values: Optional[Sequence[str]]) -> Optional[List[str]]:
 
 def validate_api_keys(models: Iterable[str]) -> None:
     for m in set(models):
-        env_var = MODEL_ENV_VARS.get(m)
-        if not env_var:
+        env_vars = MODEL_ENV_VARS.get(m)
+        if not env_vars:
             continue
-        api_key = os.getenv(env_var)
-        if not api_key or "your_" in api_key.lower():
+        has_valid_key = False
+        for env_var in env_vars:
+            api_key = os.getenv(env_var)
+            if api_key and "your_" not in api_key.lower():
+                has_valid_key = True
+                break
+
+        if not has_valid_key:
             logging.error(
-                "Required key %s missing or placeholder. Add it to your .env to use model '%s'.",
-                env_var,
+                "Required API key missing or placeholder for model '%s'. Set one of: %s",
                 m,
+                ", ".join(env_vars),
             )
             raise SystemExit(2)
 
@@ -172,6 +178,11 @@ def build_argument_parser() -> argparse.ArgumentParser:
         type=int,
         default=1,
         help="Number of parallel jobs",
+    )
+    parser.add_argument(
+        "--use-batch-api",
+        action="store_true",
+        help="Use the asynchronous Batch Processing API for supported models",
     )
     parser.add_argument(
         "--verbose",
@@ -343,9 +354,127 @@ def worker(task_tuple) -> bool:  # type: ignore
 _original_worker = worker
 
 
+def execute_tasks_batch_api(tasks: List[Task], base_dirs: Dict[str, Path]) -> List[Task]:
+    """Execute tasks using the asynchronous Batch API of the underlying models."""
+    from llm_fux.core.dispatcher import get_llm_with_model_name, get_llm, detect_model_provider
+    from llm_fux.core.runner import PromptRunner
+    import json
+    import time
+
+    # 1. Group tasks by provider/model instance
+    model_to_tasks: Dict[str, List[Task]] = {}
+    for task in tasks:
+        model_to_tasks.setdefault(task.model_name, []).append(task)
+
+    failures: List[Task] = []
+    active_batches = [] # List of (model_instance, batch_id, {custom_id -> task}, {custom_id -> runner})
+
+    for model_name, model_tasks in model_to_tasks.items():
+        try:
+            try:
+                provider = detect_model_provider(model_name)
+                model = get_llm_with_model_name(model_name, provider)
+            except ValueError:
+                model = get_llm(model_name)
+
+            if not getattr(model, "submit_batch", None) or not getattr(model, "supports_batch_api", lambda: False)():
+                logging.warning(f"Model {model_name} does not support Batch API. Falling back to sequential execution for these tasks.")
+                # We could add them to a legacy execution pool, but for simplicity let's just run them here:
+                for t in model_tasks:
+                    if not run_task(t, base_dirs):
+                        failures.append(t)
+                continue
+
+            # Prepare Prompts
+            batch_inputs = {}
+            runners = {}
+            task_map = {}
+            for t in model_tasks:
+                runner = PromptRunner(
+                    model=model, file_id=t.file_id, datatype=t.datatype,
+                    context=t.context, guide=t.guide, dataset=t.dataset,
+                    base_dirs=base_dirs, temperature=t.temperature,
+                    max_tokens=t.max_tokens, save=t.save
+                )
+
+                # Check overwrite condition early
+                if runner.save_to and runner.save_to.exists() and not t.overwrite:
+                    logging.info("Skipping %s/%s/%s (already exists)", t.model_name, t.file_id, t.datatype)
+                    continue
+
+                prompt_input = runner._build_prompt_input()
+                import uuid
+                custom_id = f"task_{uuid.uuid4().hex[:8]}"
+                batch_inputs[custom_id] = prompt_input
+                runners[custom_id] = runner
+                task_map[custom_id] = t
+
+            if not batch_inputs:
+                continue # All tasks skipped
+
+            # Submit Batch
+            try:
+                batch_id = model.submit_batch(batch_inputs)
+                logging.info("Submitted batch API job for model %s: %s", model_name, batch_id)
+                active_batches.append((model, batch_id, task_map, runners))
+            except Exception as e:
+                logging.error("Failed to submit batch for model %s: %s", model_name, e)
+                failures.extend(model_tasks)
+
+        except Exception as e:
+            logging.error("[%s] preparation failed: %s", model_name, e)
+            failures.extend(model_tasks)
+
+    # 2. Poll active batches
+    while active_batches:
+        time.sleep(30) # Poll every 30 seconds
+        next_active = []
+        for model, batch_id, task_map, runners in active_batches:
+            try:
+                status = model.poll_batch(batch_id)
+                logging.info("Batch %s status: %s", batch_id, status)
+                if status == "completed":
+                    # Retrieve and save results
+                    for result in model.retrieve_batch_results(batch_id):
+                        t = task_map.get(result.custom_id)
+                        runner = runners.get(result.custom_id)
+                        if not t or not runner:
+                            continue
+
+                        if result.error:
+                            logging.error("Task failed in batch %s: %s", batch_id, result.error)
+                            failures.append(t)
+                        else:
+                            # Mock token usage mapping back
+                            runner._token_usage = result.response.usage
+                            runner._response_model_id = result.response.model_id
+                            runner._extra_params = result.response.extra_params
+                            runner._api_duration = 0.0 # Unknown for batch
+
+                            if runner.save and runner.save_to:
+                                prompt_input = runner._build_prompt_input() # Rebuild for logging persistence
+                                runner._persist_artifacts(result.response.text, prompt_input)
+                            logging.info("Completed %s using Batch API", t.file_id)
+
+                elif status in ("failed", "cancelled", "expired"):
+                    logging.error("Batch %s ended with status %s", batch_id, status)
+                    failures.extend(task_map.values())
+                else:
+                    next_active.append((model, batch_id, task_map, runners))
+            except Exception as e:
+                logging.error("Error polling batch %s: %s", batch_id, e)
+                failures.extend(task_map.values())
+
+        active_batches = next_active
+
+    return failures
+
 def execute_tasks(
-    tasks: List[Task], base_dirs: Dict[str, Path], jobs: int = 1
+    tasks: List[Task], base_dirs: Dict[str, Path], jobs: int = 1, use_batch_api: bool = False
 ) -> List[Task]:
+    if use_batch_api:
+        return execute_tasks_batch_api(tasks, base_dirs)
+
     failures: List[Task] = []
     if jobs <= 1:
         for t in tasks:
@@ -469,7 +598,7 @@ def run_main(argv: list[str] | None = None) -> int:
             if not ok:
                 failures.append(t)
     else:
-        failures = execute_tasks(tasks, base_dirs, args.jobs)
+        failures = execute_tasks(tasks, base_dirs, args.jobs, getattr(args, "use_batch_api", False))
         failures = retry_failures(failures, base_dirs, args.retry)
 
     if failures:

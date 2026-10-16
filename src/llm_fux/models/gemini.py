@@ -2,12 +2,15 @@
 
 import logging
 import os
-from typing import Optional
+import time
+import json
+import tempfile
+from typing import Optional, Dict, Iterator
 
 from google import genai
 from google.genai import types
 
-from llm_fux.models.base import LLMInterface, LLMResponse, PromptInput, TokenUsage
+from llm_fux.models.base import LLMInterface, LLMResponse, PromptInput, TokenUsage, BatchResult
 from llm_fux.config.config import DEFAULT_MODELS, get_timeout, get_max_tokens
 from llm_fux.utils.text_utils import clean_code_blocks
 
@@ -26,7 +29,11 @@ class GeminiModel(LLMInterface):
 
     def __init__(self, model_name: Optional[str] = None):
         # Load API key
-        self.api_key = os.getenv("GOOGLE_API_KEY") or os.getenv("GOOGLE_GENAI_API_KEY")
+        self.api_key = (
+            os.getenv("GOOGLE_API_KEY")
+            or os.getenv("GOOGLE_GENAI_API_KEY")
+            or os.getenv("GEMINI_API_KEY")
+        )
         if not self.api_key:
             raise EnvironmentError("GOOGLE_API_KEY is not set in the environment.")
 
@@ -70,9 +77,11 @@ class GeminiModel(LLMInterface):
             max_output_tokens=max_tokens,
         )
         
-        # Log the model name being used
-        logger.info("Using model: %s", model_id)
-            
+        logger.info(
+            "Gemini API call — model: %s, max_tokens: %s, temperature: %s",
+            model_id, max_tokens, input.temperature,
+        )
+
         # Generate content using the client API
         response = self.client.models.generate_content(
             model=model_id,
@@ -109,3 +118,94 @@ class GeminiModel(LLMInterface):
             )
 
         return LLMResponse(text=cleaned, usage=usage, model_id=model_id)
+
+    def submit_batch(self, inputs: Dict[str, PromptInput]) -> str:
+        requests_jsonl = []
+        model = self.model_name
+        for custom_id, prompt_input in inputs.items():
+            model = prompt_input.model_name or self.model_name
+            if model.startswith("models/"):
+                model = model[7:]
+            max_tokens = getattr(prompt_input, "max_tokens", None) or get_max_tokens()
+
+            req = {
+                "key": str(custom_id),
+                "request": {
+                    "contents": [{"parts": [{"text": prompt_input.user_prompt}], "role": "user"}],
+                    "systemInstruction": {
+                        "parts": [{"text": prompt_input.system_prompt}]
+                    },
+                    "generationConfig": {
+                        "temperature": prompt_input.temperature,
+                        "maxOutputTokens": max_tokens,
+                    }
+                }
+            }
+            requests_jsonl.append(json.dumps(req))
+
+        with tempfile.NamedTemporaryFile("w+", delete=False, suffix=".jsonl") as f:
+            f.write("\n".join(requests_jsonl) + "\n")
+            f.seek(0)
+
+            uploaded_file = self.client.files.upload(
+                file=f.name,
+                config=types.UploadFileConfig(display_name=f"batch-{int(time.time())}", mime_type='application/jsonl')
+            )
+
+        os.unlink(f.name)
+
+        batch_job = self.client.batches.create(
+            model=model,
+            src=uploaded_file.name,
+            config={'display_name': f"batch-job-{int(time.time())}"}
+        )
+        logger.info("Submitted Gemini batch job: %s", batch_job.name)
+        return batch_job.name
+
+    def poll_batch(self, batch_id: str) -> str:
+        batch = self.client.batches.get(name=batch_id)
+        if batch.state.name == "JOB_STATE_SUCCEEDED":
+            return "completed"
+        elif batch.state.name in ("JOB_STATE_FAILED", "JOB_STATE_CANCELLED", "JOB_STATE_EXPIRED"):
+            return "failed"
+        return "in_progress"
+
+    def retrieve_batch_results(self, batch_id: str) -> Iterator[BatchResult]:
+        batch = self.client.batches.get(name=batch_id)
+        if hasattr(batch.dest, "file_name") and batch.dest.file_name:
+            file_content_bytes = self.client.files.download(file=batch.dest.file_name)
+            file_content = file_content_bytes.decode('utf-8')
+            for line in file_content.splitlines():
+                if not line.strip(): continue
+                data = json.loads(line)
+                custom_id = data.get("key", "Unknown")
+
+                if "response" in data and data["response"]:
+                    try:
+                        text = ""
+                        for part in data["response"]["candidates"][0]["content"]["parts"]:
+                            if "text" in part:
+                                text += part["text"]
+
+                        cleaned = clean_code_blocks(text)
+
+                        meta = data["response"].get("usageMetadata", {})
+                        usage = TokenUsage(
+                            prompt_tokens=meta.get("promptTokenCount", 0),
+                            completion_tokens=meta.get("candidatesTokenCount", 0),
+                            total_tokens=meta.get("totalTokenCount", 0)
+                        )
+
+                        yield BatchResult(
+                            custom_id=custom_id,
+                            response=LLMResponse(text=cleaned, usage=usage, model_id=self.model_name)
+                        )
+                    except Exception as e:
+                        yield BatchResult(custom_id=custom_id, error=f"Parse error: {str(e)}")
+                elif "error" in data:
+                    yield BatchResult(custom_id=custom_id, error=str(data["error"]))
+                else:
+                    yield BatchResult(custom_id=custom_id, error="Unknown error in response")
+
+    def supports_batch_api(self) -> bool:
+        return True

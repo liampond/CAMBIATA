@@ -29,5 +29,6 @@ REASONING PROCESS — follow these steps internally before writing any output:
 
 ENCODING ACCURACY:
 - Preserve the encoding conventions from the input file: namespace declarations, attribute ordering, indentation style.
-- Every opened XML element must be closed; self-closing tags must use />; attribute values must be quoted.
+- Every opened XML element must be closed exactly once; self-closing tags must use />; attribute values must be quoted. Never emit a closing tag (e.g., </pitch>, </note>) more than once for the same element.
+- Each <note> element contains children in this order: <pitch>, then <duration>, <voice>, <type>, <staff> (and optionally <tie>, <notations>, etc.). Close </note> only after ALL children are written — never immediately after </pitch>.
 - Durations and divisions must be arithmetically consistent — each measure must sum to exactly the time signature value.

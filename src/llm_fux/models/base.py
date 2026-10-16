@@ -2,7 +2,7 @@
 
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
-from typing import Optional, Dict, Any
+from typing import Optional, Dict, Any, Iterator
 
 
 @dataclass
@@ -58,7 +58,15 @@ class LLMResponse:
     text: str
     usage: Optional[TokenUsage] = None
     model_id: Optional[str] = None
+    extra_params: Dict[str, Any] = field(default_factory=dict)
 
+
+class BatchResult:
+    """Represents a single result from a batch process."""
+    def __init__(self, custom_id: str, response: Optional[LLMResponse] = None, error: Optional[str] = None):
+        self.custom_id = custom_id
+        self.response = response
+        self.error = error
 
 class LLMInterface(ABC):
     """
@@ -79,3 +87,46 @@ class LLMInterface(ABC):
             LLMResponse: The LLM's generated response text and token usage.
         """
         pass
+
+    @abstractmethod
+    def submit_batch(self, inputs: Dict[str, PromptInput]) -> str:
+        """
+        Submit a batch of prompts for processing.
+
+        Parameters:
+            inputs: A dictionary mapping custom IDs to PromptInput instances.
+
+        Returns:
+            str: The batch ID.
+        """
+        pass
+
+    @abstractmethod
+    def poll_batch(self, batch_id: str) -> str:
+        """
+        Poll the status of a batch process.
+
+        Parameters:
+            batch_id: The ID of the batch to poll.
+
+        Returns:
+            str: The current status of the batch ('completed', 'failed', 'in_progress', etc.)
+        """
+        pass
+
+    @abstractmethod
+    def retrieve_batch_results(self, batch_id: str) -> 'Iterator[BatchResult]':
+        """
+        Retrieve the results of a completed batch.
+
+        Parameters:
+            batch_id: The ID of the completed batch.
+
+        Returns:
+            Iterator[BatchResult]: An iterator yielding the results.
+        """
+        pass
+
+    def supports_batch_api(self) -> bool:
+        """Check if provider has batch API"""
+        return False

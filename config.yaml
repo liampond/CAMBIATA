@@ -12,9 +12,9 @@ timeout: 600               # API timeout in seconds (600 = 10 minutes, 0 = no ti
 # LOCKED — Do not modify model identifiers without explicit approval.
 # These are the canonical model versions used for all experiments.
 default_models:
-  openai: gpt-5.1-2025-11-13
-  anthropic: claude-opus-4-5
-  google: gemini-3-pro-preview
+  openai: gpt-5.4
+  anthropic: claude-opus-4-6
+  google: gemini-3.1-pro-preview
 
 # Per-model temperature defaults.
 # Gemini 3: Google recommends keeping temperature at 1.0 (lowering may cause
@@ -29,6 +29,7 @@ model_temperatures:
 data_dir: ./data
 dataset: ""
 outputs_dir: ./outputs
+max_tokens: 200000       # Global fallback max response length
 
 # =============================================================================
 # SINGLE RUN CONFIGURATION
@@ -54,7 +55,7 @@ single_run:
 
   # Model parameters
   temperature: 0.5         # 0.0-1.0. 0.0 for deterministic output, 1.0 for creative.
-  max_tokens: 16000        # Maximum response length (16000 prevents truncation)
+  max_tokens: 200000       # Maximum response length
 
 # =============================================================================
 # BATCH RUN CONFIGURATION
@@ -67,26 +68,25 @@ batch_run:
   
   # What to test (list one or more of each)
   models:                  # One or more: chatgpt, claude, gemini
-    # - claude
-    # - chatgpt
-    - gemini
-  
+    - claude
+    - chatgpt
+    # - gemini             # free tier quota exceeded — needs billing enabled
+
   datatypes:               # musicxml
     - musicxml
-  
+
   files:                   # One or more file IDs
     - Above_C
-  
+
   # Context configuration
   contexts:                # Options: with, without (can include both!)
-    # - without
     - with
-  
-  guide_path: data/guides/2_second_species/2vs1_v1.5.txt  # Path to guide file when contexts includes "with"
-  
+
+  guide_path: "data/guides/5_fifth_species/Fux Rules- 5th species - Florish - v2.3.txt"
+
   # Model parameters
   temperature: 0.0         # 0.0-1.0
-  max_tokens: 16000        # Maximum response length
+  max_tokens: 200000       # Maximum response length
   
   # Execution settings
   delay: 2                 # Seconds between API calls (respects rate limits)

@@ -14,6 +14,12 @@ def make_runner(tmp_path, mock_model=None, **kwargs):
         class Dummy(LLMInterface):
             def query(self, input: PromptInput) -> str:
                 return "ok"
+            def submit_batch(self, inputs):
+                raise NotImplementedError
+            def poll_batch(self, batch_id):
+                raise NotImplementedError
+            def retrieve_batch_results(self, batch_id):
+                raise NotImplementedError
         mock_model = Dummy()
 
     base_dirs = {
