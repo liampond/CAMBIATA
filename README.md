@@ -74,6 +74,23 @@ llm-fux/
 
 See `docs/LLM-AGENT-GUIDE.md` for detailed usage instructions.
 
+## Research snapshot
+
+The retained 450-score evaluation corpus is versioned in
+[`response_standardized/`](response_standardized/README.md), with a manifest of
+file hashes and links to the saved checker results. The
+[analysis provenance](<Résultat d'analyse/README.md>) documents the exports and
+the separate [counterpoint-spellcheck](https://github.com/liampond/counterpoint-spellcheck)
+evaluator. Verify the snapshot without API calls or external dependencies:
+
+```bash
+python3 scripts/verify_corpus.py
+```
+
+The current manuscript, `paper/journal/Paper on Fux v4 MTO.docx`, and its source
+appendices are tracked. Historical drafts, duplicate PDF exports, temporary
+test outputs, and live generation outputs remain ignored.
+
 ## License
 
 See LICENSE file for details.

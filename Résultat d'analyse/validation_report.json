@@ -1,0 +1,1352 @@
+{
+  "test_data/response/ChatGPT/1st-species/v1.7/Above_A/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/1st-species/v1.7/Above_A/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/1st-species/v1.7/Above_A/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/1st-species/v1.7/Above_C/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/1st-species/v1.7/Above_C/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/1st-species/v1.7/Above_C/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/1st-species/v1.7/Above_E/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/1st-species/v1.7/Above_E/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/1st-species/v1.7/Above_E/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/1st-species/v1.7/Above_F/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/1st-species/v1.7/Above_F/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/1st-species/v1.7/Above_F/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/1st-species/v1.7/Above_G/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/1st-species/v1.7/Above_G/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/1st-species/v1.7/Above_G/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/1st-species/v1.7/Below_A/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/1st-species/v1.7/Below_A/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/1st-species/v1.7/Below_A/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/1st-species/v1.7/Below_C/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/1st-species/v1.7/Below_C/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/1st-species/v1.7/Below_C/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/1st-species/v1.7/Below_E/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/1st-species/v1.7/Below_E/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/1st-species/v1.7/Below_E/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/1st-species/v1.7/Below_F/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/1st-species/v1.7/Below_F/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/1st-species/v1.7/Below_F/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/1st-species/v1.7/Below_G/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/1st-species/v1.7/Below_G/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/1st-species/v1.7/Below_G/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/2nd-species/v2.0/Above_A/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/2nd-species/v2.0/Above_A/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/2nd-species/v2.0/Above_A/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/2nd-species/v2.0/Above_C/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/2nd-species/v2.0/Above_C/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/2nd-species/v2.0/Above_C/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/2nd-species/v2.0/Above_E/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/2nd-species/v2.0/Above_E/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/2nd-species/v2.0/Above_E/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/2nd-species/v2.0/Above_F/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/2nd-species/v2.0/Above_F/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/2nd-species/v2.0/Above_F/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/2nd-species/v2.0/Above_G/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/2nd-species/v2.0/Above_G/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/2nd-species/v2.0/Above_G/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/2nd-species/v2.0/Below_A/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/2nd-species/v2.0/Below_A/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/2nd-species/v2.0/Below_A/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/2nd-species/v2.0/Below_C/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/2nd-species/v2.0/Below_C/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/2nd-species/v2.0/Below_C/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/2nd-species/v2.0/Below_E/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/2nd-species/v2.0/Below_E/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/2nd-species/v2.0/Below_E/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/2nd-species/v2.0/Below_F/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/2nd-species/v2.0/Below_F/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/2nd-species/v2.0/Below_F/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/2nd-species/v2.0/Below_G/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/2nd-species/v2.0/Below_G/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/2nd-species/v2.0/Below_G/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/3rd-species/v2.0/Above_A/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/3rd-species/v2.0/Above_A/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/3rd-species/v2.0/Above_A/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/3rd-species/v2.0/Above_C/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/3rd-species/v2.0/Above_C/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/3rd-species/v2.0/Above_C/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/3rd-species/v2.0/Above_E/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/3rd-species/v2.0/Above_E/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/3rd-species/v2.0/Above_E/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/3rd-species/v2.0/Above_F/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/3rd-species/v2.0/Above_F/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/3rd-species/v2.0/Above_F/run_4.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/3rd-species/v2.0/Above_G/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/3rd-species/v2.0/Above_G/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/3rd-species/v2.0/Above_G/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/3rd-species/v2.0/Below_A/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/3rd-species/v2.0/Below_A/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/3rd-species/v2.0/Below_A/run_5.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/3rd-species/v2.0/Below_C/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/3rd-species/v2.0/Below_C/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/3rd-species/v2.0/Below_C/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/3rd-species/v2.0/Below_E/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/3rd-species/v2.0/Below_E/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/3rd-species/v2.0/Below_E/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/3rd-species/v2.0/Below_F/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/3rd-species/v2.0/Below_F/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/3rd-species/v2.0/Below_F/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/3rd-species/v2.0/Below_G/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/3rd-species/v2.0/Below_G/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/3rd-species/v2.0/Below_G/run_4.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/4th-species/v1.7/Above_A/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/4th-species/v1.7/Above_A/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/4th-species/v1.7/Above_A/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/4th-species/v1.7/Above_C/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/4th-species/v1.7/Above_C/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/4th-species/v1.7/Above_C/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/4th-species/v1.7/Above_E/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/4th-species/v1.7/Above_E/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/4th-species/v1.7/Above_E/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/4th-species/v1.7/Above_F/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/4th-species/v1.7/Above_F/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/4th-species/v1.7/Above_F/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/4th-species/v1.7/Above_G/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/4th-species/v1.7/Above_G/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/4th-species/v1.7/Above_G/run_4.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/4th-species/v1.7/Below_A/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/4th-species/v1.7/Below_A/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/4th-species/v1.7/Below_A/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/4th-species/v1.7/Below_C/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/4th-species/v1.7/Below_C/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/4th-species/v1.7/Below_C/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/4th-species/v1.7/Below_E/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/4th-species/v1.7/Below_E/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/4th-species/v1.7/Below_E/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/4th-species/v1.7/Below_F/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/4th-species/v1.7/Below_F/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/4th-species/v1.7/Below_F/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/4th-species/v1.7/Below_G/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/4th-species/v1.7/Below_G/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/4th-species/v1.7/Below_G/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/5th-species/v2.4/Above_A/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/5th-species/v2.4/Above_A/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/5th-species/v2.4/Above_A/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/5th-species/v2.4/Above_C/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/5th-species/v2.4/Above_C/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/5th-species/v2.4/Above_C/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/5th-species/v2.4/Above_E/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/5th-species/v2.4/Above_E/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/5th-species/v2.4/Above_E/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/5th-species/v2.4/Above_F/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/5th-species/v2.4/Above_F/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/5th-species/v2.4/Above_F/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/5th-species/v2.4/Above_G/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/5th-species/v2.4/Above_G/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/5th-species/v2.4/Above_G/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/5th-species/v2.4/Below_A/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/5th-species/v2.4/Below_A/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/5th-species/v2.4/Below_A/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/5th-species/v2.4/Below_C/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/5th-species/v2.4/Below_C/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/5th-species/v2.4/Below_C/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/5th-species/v2.4/Below_E/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/5th-species/v2.4/Below_E/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/5th-species/v2.4/Below_E/run_4.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/5th-species/v2.4/Below_F/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/5th-species/v2.4/Below_F/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/5th-species/v2.4/Below_F/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/5th-species/v2.4/Below_G/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/5th-species/v2.4/Below_G/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/ChatGPT/5th-species/v2.4/Below_G/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/1st-species/v1.7/Above_A/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/1st-species/v1.7/Above_A/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/1st-species/v1.7/Above_A/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/1st-species/v1.7/Above_C/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/1st-species/v1.7/Above_C/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/1st-species/v1.7/Above_C/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/1st-species/v1.7/Above_E/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/1st-species/v1.7/Above_E/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/1st-species/v1.7/Above_E/run_4.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/1st-species/v1.7/Above_F/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/1st-species/v1.7/Above_F/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/1st-species/v1.7/Above_F/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/1st-species/v1.7/Above_G/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/1st-species/v1.7/Above_G/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/1st-species/v1.7/Above_G/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/1st-species/v1.7/Below_A/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/1st-species/v1.7/Below_A/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/1st-species/v1.7/Below_A/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/1st-species/v1.7/Below_C/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/1st-species/v1.7/Below_C/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/1st-species/v1.7/Below_C/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/1st-species/v1.7/Below_E/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/1st-species/v1.7/Below_E/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/1st-species/v1.7/Below_E/run_5.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/1st-species/v1.7/Below_F/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/1st-species/v1.7/Below_F/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/1st-species/v1.7/Below_F/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/1st-species/v1.7/Below_G/run_1.musicxml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/1st-species/v1.7/Below_G/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/1st-species/v1.7/Below_G/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/2nd-species/v2.0/Above_A/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/2nd-species/v2.0/Above_A/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/2nd-species/v2.0/Above_A/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/2nd-species/v2.0/Above_C/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/2nd-species/v2.0/Above_C/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/2nd-species/v2.0/Above_C/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/2nd-species/v2.0/Above_E/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/2nd-species/v2.0/Above_E/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/2nd-species/v2.0/Above_E/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/2nd-species/v2.0/Above_F/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/2nd-species/v2.0/Above_F/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/2nd-species/v2.0/Above_F/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/2nd-species/v2.0/Above_G/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/2nd-species/v2.0/Above_G/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/2nd-species/v2.0/Above_G/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/2nd-species/v2.0/Below_A/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/2nd-species/v2.0/Below_A/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/2nd-species/v2.0/Below_A/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/2nd-species/v2.0/Below_C/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/2nd-species/v2.0/Below_C/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/2nd-species/v2.0/Below_C/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/2nd-species/v2.0/Below_E/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/2nd-species/v2.0/Below_E/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/2nd-species/v2.0/Below_E/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/2nd-species/v2.0/Below_F/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/2nd-species/v2.0/Below_F/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/2nd-species/v2.0/Below_F/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/2nd-species/v2.0/Below_G/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/2nd-species/v2.0/Below_G/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/2nd-species/v2.0/Below_G/run_5.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/3rd-species/v2.0/Above_A/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/3rd-species/v2.0/Above_A/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/3rd-species/v2.0/Above_A/run_6.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/3rd-species/v2.0/Above_C/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/3rd-species/v2.0/Above_C/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/3rd-species/v2.0/Above_C/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/3rd-species/v2.0/Above_E/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/3rd-species/v2.0/Above_E/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/3rd-species/v2.0/Above_E/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/3rd-species/v2.0/Above_F/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/3rd-species/v2.0/Above_F/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/3rd-species/v2.0/Above_F/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/3rd-species/v2.0/Above_G/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/3rd-species/v2.0/Above_G/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/3rd-species/v2.0/Above_G/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/3rd-species/v2.0/Below_A/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/3rd-species/v2.0/Below_A/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/3rd-species/v2.0/Below_A/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/3rd-species/v2.0/Below_C/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/3rd-species/v2.0/Below_C/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/3rd-species/v2.0/Below_C/run_6.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/3rd-species/v2.0/Below_E/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/3rd-species/v2.0/Below_E/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/3rd-species/v2.0/Below_E/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/3rd-species/v2.0/Below_F/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/3rd-species/v2.0/Below_F/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/3rd-species/v2.0/Below_F/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/3rd-species/v2.0/Below_G/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/3rd-species/v2.0/Below_G/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/3rd-species/v2.0/Below_G/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/4th-species/v1.7/Above_A/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/4th-species/v1.7/Above_A/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/4th-species/v1.7/Above_A/run_6.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/4th-species/v1.7/Above_C/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/4th-species/v1.7/Above_C/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/4th-species/v1.7/Above_C/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/4th-species/v1.7/Above_E/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/4th-species/v1.7/Above_E/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/4th-species/v1.7/Above_E/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/4th-species/v1.7/Above_F/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/4th-species/v1.7/Above_F/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/4th-species/v1.7/Above_F/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/4th-species/v1.7/Above_G/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/4th-species/v1.7/Above_G/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/4th-species/v1.7/Above_G/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/4th-species/v1.7/Below_A/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/4th-species/v1.7/Below_A/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/4th-species/v1.7/Below_A/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/4th-species/v1.7/Below_C/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/4th-species/v1.7/Below_C/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/4th-species/v1.7/Below_C/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/4th-species/v1.7/Below_E/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/4th-species/v1.7/Below_E/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/4th-species/v1.7/Below_E/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/4th-species/v1.7/Below_F/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/4th-species/v1.7/Below_F/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/4th-species/v1.7/Below_F/run_6.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/4th-species/v1.7/Below_G/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/4th-species/v1.7/Below_G/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/4th-species/v1.7/Below_G/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/5th-species/v2.4/Above_A/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/5th-species/v2.4/Above_A/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/5th-species/v2.4/Above_A/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/5th-species/v2.4/Above_C/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/5th-species/v2.4/Above_C/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/5th-species/v2.4/Above_C/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/5th-species/v2.4/Above_E/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/5th-species/v2.4/Above_E/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/5th-species/v2.4/Above_E/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/5th-species/v2.4/Above_F/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/5th-species/v2.4/Above_F/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/5th-species/v2.4/Above_F/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/5th-species/v2.4/Above_G/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/5th-species/v2.4/Above_G/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/5th-species/v2.4/Above_G/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/5th-species/v2.4/Below_A/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/5th-species/v2.4/Below_A/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/5th-species/v2.4/Below_A/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/5th-species/v2.4/Below_C/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/5th-species/v2.4/Below_C/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/5th-species/v2.4/Below_C/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/5th-species/v2.4/Below_E/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/5th-species/v2.4/Below_E/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/5th-species/v2.4/Below_E/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/5th-species/v2.4/Below_F/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/5th-species/v2.4/Below_F/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/5th-species/v2.4/Below_F/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/5th-species/v2.4/Below_G/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/5th-species/v2.4/Below_G/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Claude/5th-species/v2.4/Below_G/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/1st-species/v1.7/Above_A/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/1st-species/v1.7/Above_A/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/1st-species/v1.7/Above_A/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/1st-species/v1.7/Above_C/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/1st-species/v1.7/Above_C/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/1st-species/v1.7/Above_C/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/1st-species/v1.7/Above_E/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/1st-species/v1.7/Above_E/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/1st-species/v1.7/Above_E/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/1st-species/v1.7/Above_F/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/1st-species/v1.7/Above_F/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/1st-species/v1.7/Above_F/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/1st-species/v1.7/Above_G/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/1st-species/v1.7/Above_G/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/1st-species/v1.7/Above_G/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/1st-species/v1.7/Below_A/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/1st-species/v1.7/Below_A/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/1st-species/v1.7/Below_A/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/1st-species/v1.7/Below_C/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/1st-species/v1.7/Below_C/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/1st-species/v1.7/Below_C/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/1st-species/v1.7/Below_E/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/1st-species/v1.7/Below_E/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/1st-species/v1.7/Below_E/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/1st-species/v1.7/Below_F/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/1st-species/v1.7/Below_F/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/1st-species/v1.7/Below_F/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/1st-species/v1.7/Below_G/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/1st-species/v1.7/Below_G/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/1st-species/v1.7/Below_G/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/2nd-species/v2.0/Above_A/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/2nd-species/v2.0/Above_A/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/2nd-species/v2.0/Above_A/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/2nd-species/v2.0/Above_C/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/2nd-species/v2.0/Above_C/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/2nd-species/v2.0/Above_C/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/2nd-species/v2.0/Above_E/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/2nd-species/v2.0/Above_E/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/2nd-species/v2.0/Above_E/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/2nd-species/v2.0/Above_F/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/2nd-species/v2.0/Above_F/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/2nd-species/v2.0/Above_F/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/2nd-species/v2.0/Above_G/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/2nd-species/v2.0/Above_G/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/2nd-species/v2.0/Above_G/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/2nd-species/v2.0/Below_A/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/2nd-species/v2.0/Below_A/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/2nd-species/v2.0/Below_A/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/2nd-species/v2.0/Below_C/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/2nd-species/v2.0/Below_C/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/2nd-species/v2.0/Below_C/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/2nd-species/v2.0/Below_E/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/2nd-species/v2.0/Below_E/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/2nd-species/v2.0/Below_E/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/2nd-species/v2.0/Below_F/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/2nd-species/v2.0/Below_F/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/2nd-species/v2.0/Below_F/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/2nd-species/v2.0/Below_G/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/2nd-species/v2.0/Below_G/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/2nd-species/v2.0/Below_G/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/3rd-species/v2.0/Above_A/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/3rd-species/v2.0/Above_A/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/3rd-species/v2.0/Above_A/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/3rd-species/v2.0/Above_C/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/3rd-species/v2.0/Above_C/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/3rd-species/v2.0/Above_C/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/3rd-species/v2.0/Above_E/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/3rd-species/v2.0/Above_E/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/3rd-species/v2.0/Above_E/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/3rd-species/v2.0/Above_F/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/3rd-species/v2.0/Above_F/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/3rd-species/v2.0/Above_F/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/3rd-species/v2.0/Above_G/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/3rd-species/v2.0/Above_G/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/3rd-species/v2.0/Above_G/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/3rd-species/v2.0/Below_A/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/3rd-species/v2.0/Below_A/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/3rd-species/v2.0/Below_A/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/3rd-species/v2.0/Below_C/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/3rd-species/v2.0/Below_C/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/3rd-species/v2.0/Below_C/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/3rd-species/v2.0/Below_E/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/3rd-species/v2.0/Below_E/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/3rd-species/v2.0/Below_E/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/3rd-species/v2.0/Below_F/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/3rd-species/v2.0/Below_F/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/3rd-species/v2.0/Below_F/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/3rd-species/v2.0/Below_G/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/3rd-species/v2.0/Below_G/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/3rd-species/v2.0/Below_G/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/4th-species/v1.7/Above_A/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/4th-species/v1.7/Above_A/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/4th-species/v1.7/Above_A/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/4th-species/v1.7/Above_C/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/4th-species/v1.7/Above_C/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/4th-species/v1.7/Above_C/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/4th-species/v1.7/Above_E/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/4th-species/v1.7/Above_E/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/4th-species/v1.7/Above_E/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/4th-species/v1.7/Above_F/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/4th-species/v1.7/Above_F/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/4th-species/v1.7/Above_F/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/4th-species/v1.7/Above_G/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/4th-species/v1.7/Above_G/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/4th-species/v1.7/Above_G/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/4th-species/v1.7/Below_A/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/4th-species/v1.7/Below_A/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/4th-species/v1.7/Below_A/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/4th-species/v1.7/Below_C/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/4th-species/v1.7/Below_C/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/4th-species/v1.7/Below_C/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/4th-species/v1.7/Below_E/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/4th-species/v1.7/Below_E/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/4th-species/v1.7/Below_E/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/4th-species/v1.7/Below_F/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/4th-species/v1.7/Below_F/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/4th-species/v1.7/Below_F/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/4th-species/v1.7/Below_G/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/4th-species/v1.7/Below_G/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/4th-species/v1.7/Below_G/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/5th-species/v2.4/Above_A/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/5th-species/v2.4/Above_A/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/5th-species/v2.4/Above_A/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/5th-species/v2.4/Above_C/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/5th-species/v2.4/Above_C/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/5th-species/v2.4/Above_C/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/5th-species/v2.4/Above_E/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/5th-species/v2.4/Above_E/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/5th-species/v2.4/Above_E/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/5th-species/v2.4/Above_F/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/5th-species/v2.4/Above_F/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/5th-species/v2.4/Above_F/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/5th-species/v2.4/Above_G/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/5th-species/v2.4/Above_G/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/5th-species/v2.4/Above_G/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/5th-species/v2.4/Below_A/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/5th-species/v2.4/Below_A/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/5th-species/v2.4/Below_A/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/5th-species/v2.4/Below_C/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/5th-species/v2.4/Below_C/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/5th-species/v2.4/Below_C/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/5th-species/v2.4/Below_E/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/5th-species/v2.4/Below_E/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/5th-species/v2.4/Below_E/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/5th-species/v2.4/Below_F/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/5th-species/v2.4/Below_F/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/5th-species/v2.4/Below_F/run_3.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/5th-species/v2.4/Below_G/run_1.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/5th-species/v2.4/Below_G/run_2.musicxml.xml": {
+    "category": "valid"
+  },
+  "test_data/response/Gemini/5th-species/v2.4/Below_G/run_3.musicxml.xml": {
+    "category": "valid"
+  }
+}
