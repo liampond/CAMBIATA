@@ -21,12 +21,14 @@ wheels/
 *.egg
 *.docx
 
-# Keep historical drafts local; version the current manuscript and appendices.
+# Keep manuscript drafts and review artifacts local; version the appendices.
 /paper/*
 !/paper/journal/
 /paper/journal/*
-!/paper/journal/Paper on Fux v4 MTO.docx
 !/paper/journal/Publication_Appendices_Complete CAMBIATA v1.0.docx
+
+# Microsoft Office temporary lock files
+~$*
 
 # Virtual environments
 venv/
